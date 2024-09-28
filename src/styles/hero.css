@@ -1,0 +1,117 @@
+.hero {
+  width: 100%;
+  height: 40rem;
+  min-height: 32rem;
+  background: fixed rgb(10, 0, 27);
+  border-top: 10px solid rgb(22, 0, 60);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+  position: relative; /* Required for pseudo-element positioning */
+  z-index: 1;
+}
+
+.hero ::after {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 80px;
+  background-color: white;
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  z-index: -1;
+}
+
+/* Mobile view */
+@media (max-width: 768px) {
+  .hero-tabs {
+    flex-direction: column;
+  }
+}
+
+.hero-tabs {
+  width: auto;
+  gap: 2rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-tab {
+  width: auto;
+  padding: 0.4rem 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  font-size: 1.2rem;
+  border: 1px solid white;
+  border-radius: 0.4rem;
+}
+
+.hero-tab:hover{
+  background-color: rgb(66, 60, 77);
+  cursor: pointer;
+}
+
+
+@media screen and (max-width: 1200px) {
+  .hero-inner { 
+    flex-direction: column-reverse;
+    gap: 0rem;
+    padding: 0rem;
+  }
+}
+
+.hero-inner {
+  width: 100%;
+  height: 100%;
+  max-width: calc(1280px + 2rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  color: rgb(255, 255, 255);
+}
+
+.hero-inner h1 { 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  font-size: 8rem;
+  font-stretch: expanded;
+}
+
+.hero-inner p { 
+  font-family: 'Poppins', sans-serif;
+  font-weight: 100;
+  font-size: 1.6rem;
+  font-stretch: expanded;
+}
+
+.hero-inner .hero-image {
+  width: 16rem;
+  height: 16rem;
+}
+
+.hero-inner .hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-inner .hero-image::before {
+  content: '';
+  position: absolute;
+  top: -5px; /* Adjust based on desired blur effect size */
+  left: -5px; /* Adjust based on desired blur effect size */
+  right: -5px; /* Adjust based on desired blur effect size */
+  bottom: -5px; /* Adjust based on desired blur effect size */
+  background: rgba(10, 0, 27, 0.5); /* Semi-transparent to blend with background */
+  filter: blur(10px); /* Amount of blur */
+  border-radius: 12rem; /* Match image border radius */
+  z-index: -1; /* Place behind the image */
+}
