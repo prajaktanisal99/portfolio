@@ -9,7 +9,8 @@ const Hero = ({ setSection }) => {
           <h1 id="animatedText">Welcome.</h1>
           <p>
             My name is Prajakta Nisal, graduate student at the University of
-            Texas, Arlington.
+            Texas, Arlington with 2+ years of experience working as a Technology
+            Analyst(Frontend developer) at DWS India Private Limited.
           </p>
           <div className="hero-tabs">
             <div
